@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title
+      Real Time Dash Client Test Site
+    = csrf_meta_tags
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    %link{:rel => "shortcut icon", :type => "image/x-icon", :href => "favicon.ico"}
+  %body{:data => {:offset => 50}}
+    = yield
+= debug(params) if Rails.env.development?
+-#= debug(Rails.env)

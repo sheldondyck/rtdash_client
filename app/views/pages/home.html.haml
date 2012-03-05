@@ -1,0 +1,17 @@
+.container
+  .row
+    .span8.offset2
+      %header.jumbotron.subhead
+        %h1
+          home page
+        = form_for :session, :url => pages_home_path, :html => {:class => 'form-horizontal' } do |f|
+          .fieldset
+            %legend Chat
+            %ul#chat
+              %li
+                message
+            .control-group
+              .controls
+                = f.text_field :message, :class => 'input'
+                = button_tag "Send", :class => 'btn btn-primary', :disable_with => "Processing ..."
+
